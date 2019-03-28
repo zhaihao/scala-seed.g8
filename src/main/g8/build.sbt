@@ -26,13 +26,6 @@ lazy val root = (project in file("."))
   .settings(
     moduleName    := "$name$",
     name          := "$name$",
-    sourcesInBase := false
-  )
-
-lazy val codes = (project in file("codes"))
-  .settings(
-    moduleName := "codes",
-    name       := "$name$ - Code Sources",
     libraryDependencies ++= Seq().flatten,
     libraryDependencies ++= Seq(),
     scalacOptions in (Compile, doc) ++= Seq(
@@ -50,7 +43,7 @@ lazy val codes = (project in file("codes"))
     )
   )
 
-val CODES = config("codes")
+val ROOT = config("root")
 lazy val docs = (project in file("docs"))
   .enablePlugins(SiteScaladocPlugin, ParadoxSitePlugin, ParadoxMaterialThemePlugin, GhpagesPlugin)
   .settings(
@@ -89,5 +82,5 @@ lazy val docs = (project in file("docs"))
     },
     autoAPIMappings := true,
     SiteScaladocPlugin
-      .scaladocSettings(CODES, mappings in (Compile, packageDoc) in codes, "api/"),
+      .scaladocSettings(ROOT, mappings in (Compile, packageDoc) in root, "api/"),
   )
