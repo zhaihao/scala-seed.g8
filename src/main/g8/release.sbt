@@ -42,7 +42,7 @@ publishTo := Some {
   val key = new java.io.File(sys.env("HOME") + "/.ssh/id_rsa")
   Resolver
     .ssh(
-      "ooon ivy repo",
+      "my repo",
       "repo.ooon.me",
       29344,
       "/var/lib/docker/volumes/docker_repo/_data/release"
@@ -80,5 +80,5 @@ sh := {
 
   """/Users/zhaihao/code/$name$/chmod.sh""" !
 
-  log.info("set files visible")
+  log.success("set files visible")
 }

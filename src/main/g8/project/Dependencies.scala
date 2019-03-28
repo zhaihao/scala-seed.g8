@@ -18,8 +18,8 @@ object Dependencies extends AutoPlugin {
   override def trigger  = allRequirements
 
   object autoImport {
-    lazy val base      = "me.ooon"           %% "base"          % "1.0.33"
-    lazy val scalatest = "org.scalatest"     %% "scalatest"     % "3.0.6" % Test
+    lazy val orison    = "me.ooon"           %% "orison"        % "0.0.17"
+    lazy val scalatest = "org.scalatest"     %% "scalatest"     % "3.0.7" % Test
     lazy val os_lib    = "com.lihaoyi"       %% "os-lib"        % "0.2.8"
     lazy val sqlite    = "org.xerial"        % "sqlite-jdbc"    % "3.25.2"
     lazy val requests  = "com.lihaoyi"       %% "requests"      % "0.1.7"

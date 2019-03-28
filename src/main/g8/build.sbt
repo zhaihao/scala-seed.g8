@@ -5,35 +5,29 @@ organization in Global := "$organization_name$"
 
 scalacOptions in Global ++= Seq("-unchecked", "-deprecation", "-feature", "-Xfatal-warnings")
 resolvers in Global += "Local Maven Repository" at "file://" + Path.userHome.absolutePath + "/.m2/repository"
-resolvers in Global += Resolver.url("ooon ivy repo", url("https://repo.ooon.me/release"))(
-  Resolver.ivyStylePatterns)
 externalResolvers in Global := Resolver.combineDefaultResolvers(resolvers.value.toVector,
-  mavenCentral = true)
+                                                                mavenCentral = true)
 
-libraryDependencies in Global ++= Seq(base, scalatest)
+libraryDependencies in Global ++= Seq(orison, scalatest)
 libraryDependencies in Global ++= log
 excludeDependencies in Global ++= excludes
 dependencyOverrides in Global ++= overrides
-
-scmInfo in Global := Some(
-  ScmInfo(url("$project_url$"), "$git_url$"))
-git.remoteRepo in Global := scmInfo.value.get.connection
 
 cancelable in Global := true
 //
 
 lazy val root = (project in file("."))
   .settings(
-    moduleName    := "$name$",
-    name          := "$name$",
+    moduleName          := "$name$",
+    name                := "$name$",
+    logBuffered in Test := false,
     libraryDependencies ++= Seq().flatten,
     libraryDependencies ++= Seq(),
     scalacOptions in (Compile, doc) ++= Seq(
-      "-diagrams",
       "-implicits",
       "-groups",
       "-doc-title",
-      (description in root).value,
+      description.value,
       "-doc-version",
       scalaVersion.value,
       "-sourcepath",
@@ -52,8 +46,8 @@ lazy val docs = (project in file("docs"))
     ParadoxMaterialThemePlugin.paradoxMaterialThemeSettings(Paradox),
     previewLaunchBrowser := false,
     previewFixedPort     := Some(9000),
-    previewFixedIp       := Some("0.0.0.0"),
     ghpagesNoJekyll      := true,
+    git.remoteRepo       := "git@github.com:zhaihao/$name$.git",
     excludeFilter in ghpagesCleanSite := new FileFilter {
 
       def accept(f: File) =
@@ -72,15 +66,16 @@ lazy val docs = (project in file("docs"))
     mappings in makeSite in Paradox ++= Seq(file("LICENSE") -> "LICENSE"),
     paradoxMaterialTheme in Paradox ~= {
       _.withColor("red", "teal")
+        .withFavicon("assets/favicon.ico")
         .withCopyright("© zhaihao")
         .withRepository(uri("$project_url$"))
         .withSocial(uri("$developer_url$"),
-          uri("https://twitter.com/zhaihaoooon"),
-          uri("https://www.facebook.com/zhaihaome"))
+                    uri("https://twitter.com/zhaihaoooon"),
+                    uri("https://www.facebook.com/zhaihaome"))
         .withLanguage(java.util.Locale.CHINESE)
         .withCustomStylesheet("assets/custom.css")
     },
     autoAPIMappings := true,
     SiteScaladocPlugin
-      .scaladocSettings(ROOT, mappings in (Compile, packageDoc) in root, "api/"),
+      .scaladocSettings(ROOT, mappings in (Compile, packageDoc) in root, "api/")
   )
