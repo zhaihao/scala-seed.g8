@@ -130,13 +130,13 @@ code {
     text-shadow: none;
 }
 
-.md-sidebar--primary {
-    position: absolute;
-    width: 32.2rem;
-    padding: 2.4rem 0;
-    overflow: hidden;
-    margin-left: -8rem;
-}
+/*.md-sidebar--primary {*/
+/*    position: absolute;*/
+/*    width: 32.2rem;*/
+/*    padding: 2.4rem 0;*/
+/*    overflow: hidden;*/
+/*    margin-left: -8rem;*/
+/*}*/
 
 .md-typeset #mdContent h2::before {
     padding-top: 0;
