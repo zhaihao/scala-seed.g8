@@ -10,7 +10,6 @@ releaseProcess := Seq[ReleaseStep](
   runClean,
   runTest,
   setReleaseVersion,
-  runPublish,
   setNextVersion,
   commitNextVersion
 )
