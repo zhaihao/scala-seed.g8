@@ -11,7 +11,6 @@ releaseProcess := Seq[ReleaseStep](
   runTest,
   setReleaseVersion,
   runPublish,
-  chmodStep,
   setNextVersion,
   commitNextVersion
 )
