@@ -49,8 +49,8 @@ object EnvProfilePlugin extends AutoPlugin {
       // append on the old message as well
       val defaultMessage = onLoadMessage.value
 
-      s"""|$defaultMessage
-          |Running in environment profile: [ $YELLOW${envProfile.value}$RESET ]""".stripMargin
+      s"""|\$defaultMessage
+          |Running in environment profile: [ \$YELLOW\${envProfile.value}\$RESET ]""".stripMargin
     },
     unmanagedResourceDirectories in Compile += (resourceDirectory in Compile).value.getParentFile / "common",
     resourceDirectory in Compile            := (resourceDirectory in Compile).value / envProfile.value.toString
