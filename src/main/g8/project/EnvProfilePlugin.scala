@@ -5,7 +5,6 @@
  * Please visit <http://ooon.me> or mail to zhaihao@ooon.me
  */
 
-import com.lightbend.sbt.javaagent.JavaAgentPackaging.NoPlugin
 import sbt.Keys._
 import sbt._
 
@@ -24,7 +23,7 @@ object EnvProfilePlugin extends AutoPlugin {
 
   override def trigger = NoTrigger
 
-  override def requires = NoPlugin
+  override def requires = empty
 
   object autoImport {
 
