@@ -18,12 +18,12 @@ object Dependencies extends AutoPlugin {
   override def trigger  = allRequirements
 
   object autoImport {
-    lazy val orison    = "me.ooon"           %% "orison"        % "0.0.38"
-    lazy val scalatest = "org.scalatest"     %% "scalatest"     % "3.2.1" % Test
+    lazy val orison    = "me.ooon"           %% "orison"        % "1.0.3"
+    lazy val scalatest = "org.scalatest"     %% "scalatest"     % "3.2.9" % Test
 
     lazy val log = Seq(
-      "com.typesafe.scala-logging" %% "scala-logging"  % "3.9.2",
-      "ch.qos.logback"             % "logback-classic" % "1.2.3"
+      "com.typesafe.scala-logging" %% "scala-logging"  % "3.9.4",
+      "ch.qos.logback"             % "logback-classic" % "1.2.5"
     )
 
     val excludes = Seq(
