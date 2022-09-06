@@ -41,5 +41,13 @@ object Dependencies extends AutoPlugin {
       "org.scalatest" %% "scalatest-shouldmatchers" % "3.2.13",
       "org.scalatest" %% "scalatest-freespec"       % "3.2.13"
     )
+   
+     lazy val overrideDeps = Seq(
+      // "org.scala-lang.modules" %% "scala-xml" % "2.0.1"
+    )
+
+    lazy val excludeDeps = Seq(
+      "org.slf4j" % "slf4j-log4j12",
+      "log4j"     % "log4j"
   }
 }
