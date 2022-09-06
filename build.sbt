@@ -1,14 +1,6 @@
 // This build is for this Giter8 template.
 // To test the template run `g8` or `g8Test` from the sbt session.
 // See http://www.foundweekends.org/giter8/testing.html#Using+the+Giter8Plugin for more details.
-ThisBuild / githubWorkflowBuild := Seq(
-  WorkflowStep.Run(
-    List(
-      "mv idea .idea"
-    )
-  )
-)
-
 lazy val root = (project in file("."))
   .enablePlugins(ScriptedPlugin)
   .settings(
