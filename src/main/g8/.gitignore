@@ -1,10 +1,11 @@
-# Created by .ignore support plugin (hsz.mobi)
 .idea/*
 !.idea/dictionaries/
 !.idea/dictionaries/zhaihao.xml
+!.idea/copyright/
+!.idea/copyright/ooon.xml
+!.idea/copyright/profiles_settings.xml
+.bsp
 target
 *.sc
 .DS_Store
-logs/
-data/*
-test.*
+logs
