@@ -30,13 +30,13 @@ object StudioPlugin extends AutoPlugin {
 
   override val projectSettings: Seq[Def.Setting[_]] = Seq(
     studioTarget := {
-      if (isStudio) file(s"/Volumes/RamDisk/IDEA/${name.value}")
+      if (isStudio) file(s"/Volumes/RamDisk/IDEA/\${name.value}")
       else baseDirectory.value / "target" // 无法使用 target.value 会造成循环依赖
     },
 
     // give a feed back
     onLoadMessage := {
-      if(isStudio) s"""${YELLOW}Running on Studio, output will be set to $MAGENTA${studioTarget.value}$RESET.""".stripMargin
+      if(isStudio) s"""${YELLOW}Running on Studio, output will be set to \$MAGENTA\${studioTarget.value}\$RESET.""".stripMargin
       else ""
     }
   )
