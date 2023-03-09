@@ -50,8 +50,8 @@ object EnvPlugin extends AutoPlugin {
       // append on the old message as well
       val defaultMessage = onLoadMessage.value
 
-      s"""|$defaultMessage
-          |Running in environment profile: [ $YELLOW${env.value}$RESET ]""".stripMargin
+      s"""|\$defaultMessage
+          |Running in environment profile: [ \$YELLOW\${env.value}\$RESET ]""".stripMargin
     },
     // 因为play有自己的定义，需要在 build.sbt 中进行覆盖
     Compile / unmanagedResourceDirectories += (Compile / resourceDirectory).value.getParentFile / "common",
