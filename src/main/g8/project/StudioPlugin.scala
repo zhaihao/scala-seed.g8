@@ -36,7 +36,7 @@ object StudioPlugin extends AutoPlugin {
 
     // give a feed back
     onLoadMessage := {
-      if(isStudio) s"""${YELLOW}Running on Studio, output will be set to \$MAGENTA\${studioTarget.value}\$RESET.""".stripMargin
+      if(isStudio) s"""\${YELLOW}Running on Studio, output will be set to \$MAGENTA\${studioTarget.value}\$RESET.""".stripMargin
       else ""
     }
   )
