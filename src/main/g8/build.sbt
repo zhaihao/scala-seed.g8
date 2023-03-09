@@ -5,7 +5,7 @@ target		 := studioTarget.value
 
 Global / excludeLintKeys := Set(idePackagePrefix)
 
-idePackagePrefix := Some("$organization_name$.$name$")
+idePackagePrefix := Some("$organization_name$")
 
 
 libraryDependencies ++= Seq(NSCALA, OS_LIB, SQUANTS, ORISON, TYPESAFE_CONFIG, PLAY_JSON)
