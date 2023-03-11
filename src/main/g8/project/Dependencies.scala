@@ -35,15 +35,10 @@ object Dependencies extends AutoPlugin {
 
     lazy val SCALA_TEST = Seq(
       "org.scalatest" %% "scalatest-core"           % "3.2.13",
-      "org.scalatest"  % "scalatest-compatible"     % "3.2.13",
-      "org.scalatest" %% "scalatest-diagrams"       % "3.2.13",
-      "org.scalatest" %% "scalatest-matchers-core"  % "3.2.13",
-      "org.scalatest" %% "scalatest-shouldmatchers" % "3.2.13",
       "org.scalatest" %% "scalatest-freespec"       % "3.2.13"
     )
    
-     lazy val overrides = Seq(
-      // "org.scala-lang.modules" %% "scala-xml" % "2.0.1"
+    lazy val overrides = Seq(
     )
 
     lazy val excludes = Seq(
